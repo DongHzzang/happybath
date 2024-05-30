@@ -1,0 +1,309 @@
+/* 폰트불러오기 */
+
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap');
+
+/* 폰트설정 */
+
+body{font-family: "Noto Sans KR", sans-serif; font-size: 16px; line-height: 1.5; font-weight: 400;
+    color: #292A2B;}
+strong{font-weight: 500;}
+address{font-style: normal;}
+
+
+/* 초기화 */
+
+
+body,div,h1,h2,h3,h4,h5,h6,ul,ol,li,p,button{margin: 0; padding: 0;}
+ul,ol{list-style: none;}
+a{text-decoration: none; color: #292A2B;}
+
+
+/* 이미지 하단에 생기는 여백제거 */
+
+img{vertical-align: middle;}
+
+/* 테두리제거 */
+
+button{border: 0;}
+img{border: 0;}
+
+/* 커서포인터 */
+
+button{cursor: pointer;}
+
+/* 공통클래스 */
+
+.inner{width: 1170px; margin: 0 auto; position: relative;}
+.inner::after{display: block; content: ""; clear: both;}
+
+/* 섹션 공통 */
+.sec .tit-box{text-align: center;}
+.sec .tit-box h2{font-size: 45px; line-height: 1; font-weight: 700;}
+
+
+
+
+/* 헤더영역 */
+
+#header{}
+
+#header .inner h1{float: left; margin: 22.5px 100px 0 0; }
+#header .inner h1 a{display: block;}
+#header .m-menu .btn-close{display: none;}
+
+#header .inner nav{float: left;}
+
+#header #gnb{}
+#header #gnb::after{display: block; content: ""; clear: both;}
+
+#header #gnb li{float: left;}
+#header #gnb li a{ display: block; position: relative; line-height: 140px; padding: 0 35px; font-size: 20px; 
+font-weight: 500;}
+
+#header #gnb li a:hover{color: #FF8856;}
+
+#header #gnb li a::after{content: ""; position: absolute; left: 50%; bottom: 0;
+    transform: translateX(-50%); width: 0; height: 4px; background: #FF8856;
+    transition: width 0.3s ease-out;}
+/* transition-property: width; transition-duration: 0.3s; transition-timing-function: ease-out;} */
+     /* 포지션은 너비값이 오토라 입력하지않으면 0, 때문에 컨텐츠""를 넣어야 보임 */
+#header #gnb li a:hover::after{width: calc(100% - 70px);}    
+/* calc는 무조건 띄어쓰기!!  */
+
+#header .btn-open{display: none;}
+
+
+/* 메인비주얼영역 */
+
+#mainSlide{}
+#mainSlide .slide{position: relative;}
+#mainSlide .slide img{width: 100%;}
+/* {display: block; margin: 0 auto;} 이미지를 가운데로 오게하고싶으면 적용 (width:100% 를 넣었기때문에 작성할 필요 없음)*/
+#mainSlide .slide .img-mo{display: none;}
+
+#mainSlide .container{width: 1170px; height: 100%;
+position: absolute; left: 50%; top: 0; transform: translateX(-50%);}
+/* container가 txt-wrap의 부모이지만 앱솔루트를 건 이유는 인덱스에 이미지를 배경이 아닌 이미지로 지정하였기때문에 겹쳐지게 하기위해서 */
+
+#mainSlide .container .txt-wrap{position: absolute; left: 0; top: 50%; transform: translateY(-50%);}
+
+#mainSlide .txt-wrap .tit{font-weight: 500; font-size: 40px; line-height: 1.2;}
+#mainSlide .txt-wrap .tit strong{color: #FF4583;}
+#mainSlide .txt-wrap .sub-tit{font-size: 20px; margin: 10px 0 20px 0;}
+#mainSlide .txt-wrap .cont{font-size: 24px; line-height: 1.2;}
+
+#mainSlide .slick-prev{left: 25px; z-index: 2;} 
+#mainSlide .slick-next{right: 25px; z-index: 2;}
+
+#mainSlide .slick-prev::before,
+#mainSlide .slick-next::before{font-size: 40px;}
+
+#mainSlide .slick-dots{bottom: 25px;}
+
+/* 섹션-1영역 */
+
+#sec-01{padding: 120px 0;}
+#sec-01 .tit-box p{margin-bottom: 80px ;margin-top: 20px; font-size: 26px; line-height: 1; font-weight: 500;}
+#sec-01 .tit-box p br{display: none;}
+
+#sec-01 .list{}
+#sec-01 .list::after{display: block; content: ""; clear: both;}
+
+#sec-01 .list .item{text-indent: -9999px; width: 270px; height: 400px; float: left; box-sizing: border-box;
+border: 5px solid rgba(255, 137, 86, 0); background-repeat: no-repeat; background-position: 50% 0;
+transition: all 0.3s ease-out;}
+
+#sec-01 .list .item:hover{background-position-y:-20px; border: 5px solid  rgba(255, 137, 86, 1); 
+box-shadow: 0 0 8px 4px rgba(0, 0, 0, 0.6);}
+
+#sec-01 .list .item + .item{margin-left: 30px;}
+
+#sec-01 .list .item1{background-image:url(../images/product_img1.png);}
+#sec-01 .list .item2{background-image:url(../images/product_img2.png);}
+#sec-01 .list .item3{background-image:url(../images/product_img3.png);}
+#sec-01 .list .item4{background-image:url(../images/product_img4.png);}
+
+#sec-01 .inner > p{text-align: center; margin-top: 60px;}
+#sec-01 .inner > p span{margin-left: 10px; padding: 10px; font-size: 22px; line-height: 1; font-weight: 500;}
+#sec-01 .inner > p span br{display: none;}
+
+#sec-01 .inner > p span::before{content: "응모방법"; display: inline-block; padding: 10px; background: #CED3D6;}
+
+#sec-01 .btn-wrap{text-align: center; margin-top:80px;}
+#sec-01 .btn-wrap .btn{font-size: 28px; line-height: 83px; width: 300px; height:80px; font-weight: 700; color: #fff; background: #000; border-radius: 150px; 
+}
+
+
+/* 섹션-2영역 */
+
+#sec-02{padding: 120px 0 160px;}
+
+#sec-02 .list-wrap{ border: 1px solid #878D91; box-sizing: border-box;
+    border-radius: 30px;  text-align: center; padding: 80px 0; margin-top: 80px;}
+/* 리스트웹퍼를 만든다 자식을 인라인블록으로 만든다 생성 된 부모에게 텍스트 센터를 작성한다
+ul에 보더와 라운드를 주는게 아닌 따로 틀을 만든 방식 */
+#sec-02 .list-wrap .list{display: inline-block;}
+#sec-02 .list-wrap .list::after{display: block; content: ""; clear: both;}
+
+#sec-02 .list-wrap .list li{width: 220px; float: left;}
+#sec-02 .list li + li{margin-left: 42px;}
+#sec-02 .list-wrap .list li img{}
+
+#sec-02 .txt{font-size: 16px; line-height: 1.5; font-weight: 400; margin-top: 15px;}
+
+
+/* 푸터영역 */
+
+#footer{background: #F8FAFB; padding-top: 40px;}
+#footer .inner{padding-bottom: 120px; }
+
+#footer .foot-logo{float: left;}
+
+#footer .foot-info{float: left; font-size: 14px; line-height: 1; font-weight: 400; padding-left: 54px;
+box-sizing: border-box;}
+#footer .foot-info address{}
+#footer .foot-info p{margin-top: 15px; color: #878D91;}
+
+#footer .foot-sns{position: absolute; right: 0; top: 0px;}
+#footer .foot-sns a{display: inline-block; width: 32px; height: 32px; background: peachpuff; text-indent: -9999px;}
+
+#footer .foot-sns .ico-f{background: url(../images/sns-facebook.png) no-repeat center;}
+#footer .foot-sns .ico-i{background: url(../images/sns-instar.png) no-repeat center;}
+#footer .foot-sns .ico-y{background: url(../images/sns-youtube.png) no-repeat center;}
+#footer .foot-sns .ico-n{background: url(../images/sns-naver.png) no-repeat center;}
+
+
+
+
+
+
+
+
+/*반응형 디자인을 위한 코드작성 미디어쿼리 */
+ 
+@media screen and (max-width:767px){
+
+  /* 모바일 공통 */
+
+.inner{ width: 100%; padding: 0 7.222%;
+       box-sizing: border-box;}
+
+  /* 모바일 헤더 */
+
+#header .inner{height: 80px;}
+
+#header .inner h1{float: none; margin: 6px auto; text-align: center;}
+#header .inner h1 a{display: inline-block;width: 60px; height: 60px;}
+#header .inner h1 a img{width: 100%;}
+
+#header .m-menu{background: #fff; position: absolute; left: 0; top: 0; z-index: 9999; width: 100%; height: 667px;transform: translateX(-100%);}
+#header .m-menu-header{height: 90px; position: relative;}
+
+#header .m-menu .m-menu-header .btn-close{display: block; background: transparent; position: absolute; right: 26px; top: 26px;}
+
+#header .inner nav{float: none ;}
+
+#header #gnb li{float: none; padding: 0 26px;}
+#header #gnb li a{ padding: 0; font-size: 24px; border-bottom: 1px solid #878D91;} 
+/* #header #gnb li a::after{display: none; }  */
+/* 언더바 설정을  없애고 싶다면 그냥 논으로 설정해두면 없어짐(선택자만 가져온다면 디자인 변경도 가능 */
+      
+#header .btn-open{display: block; position: absolute; left: 26px; top: 50%; transform: translateY(-50%) ; background:transparent;} 
+
+/* 모바일 메인비주얼 */
+
+#mainSlide .container{width: 100%; padding: 0 7.222%; box-sizing: border-box;}
+
+#mainSlide .swiper-slide .img-pc{display: none;}
+#mainSlide .swiper-slide .img-mo{display: block;}
+
+#mainSlide .container .txt-wrap{left: 7.222%;}
+#mainSlide .txt-wrap .tit{font-size: 28px;}
+#mainSlide .txt-wrap .sub-tit{font-size: 16px;}
+#mainSlide .txt-wrap .cont{font-size: 20px;}
+
+/* 모바일 섹션 공통 */
+
+.sec .tit-box h2{font-size: 32px;}
+
+/* 모바일 섹션-1 */
+
+#sec-01{padding: 80px 0;}
+#sec-01 .inner{text-align: center;}
+
+#sec-01 .tit-box p{font-size: 22px; margin-top: 15px;}
+
+/* 모바일 섹션1리스트 */
+
+#sec-01 .list{margin-top: 50px; display: inline-block;}
+#sec-01 .list .item + .item { margin-left: 0;}
+#sec-01 .list .item{float: none; width: 460px;}
+
+/* 모바일 섹션1 응모하기 */
+
+#sec-01 .inner > p span{display: block; line-height: 1.5;}
+#sec-01 .inner > p span br{display: block;}
+#sec-01 .btn-wrap{margin-top: 40px;}
+
+/* 모바일 섹션-2 */
+
+#sec-02{padding: 80px 0;}
+
+#sec-02 .list-wrap{padding: 40px 0; margin-top: 40px;}
+#sec-02 .list-wrap .list li{width: 50%; float: left; padding: 0 10%; box-sizing: border-box;}
+#sec-02 .list-wrap .list li img{width: 100%;}
+#sec-02 .list li + li{margin-left: 0;}
+#sec-02 .list li:nth-child(3){margin-top: 30px;}
+#sec-02 .list li:nth-child(4){margin-top: 30px;}
+
+/* 모바일 푸터영역 */
+
+#footer .inner{padding-bottom: 30px; text-align: center; }
+
+#footer .foot-logo{float: none; }
+
+#footer .foot-info{float: none; margin-left: 0;}
+#footer .foot-sns{position: static; right: 0; top: 0; margin: 15px 0;}
+
+
+
+
+}/* ==== 767px 끝부분 ==== */
+
+
+@media screen and (max-width: 480px){
+
+    #sec-01{padding: 70px 0;}
+
+
+
+#mainSlide .container .txt-wrap{left: 7.222%;}
+#mainSlide .txt-wrap .tit{font-size: 24px;}
+#mainSlide .txt-wrap .sub-tit{font-size: 14px;}
+#mainSlide .txt-wrap .cont{font-size: 16px;}
+
+#sec-01 .tit-box p{line-height: 1.2em; margin-top: 10px;}
+#sec-01 .tit-box p br{display: block;}
+
+#sec-01 .list .item{width: 270px;}
+
+#sec-02 .list-wrap .list li img{width: 128PX;}
+
+
+    
+}/*===480 끝부분===*/
+
+
+
+@media screen and (max-width: 360px){
+
+    #sec-01{padding: 60px 0;}
+
+.sec .tit-box h2{font-size: 22px;}
+#sec-01 .tit-box p{font-size: 16px;}
+
+#sec-02 .list-wrap .list li{padding: 0 5%;}
+#sec-02 .list-wrap .list li img{width: 100%;}
+
+
+}
